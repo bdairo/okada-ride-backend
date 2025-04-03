@@ -28,7 +28,23 @@ connectDB();
 
 // CORS Configuration
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: function (origin, callback) {
+        const allowedOrigins = [
+            'http://localhost:5173',  // Development
+            'https://okada-ride-frontend.vercel.app'  // Production
+        ];
+        
+        // Reject requests without origin header
+        if (!origin) {
+            return callback(new Error('Origin header is required'), false);
+        }
+        
+        if (allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Stripe-Signature'],
