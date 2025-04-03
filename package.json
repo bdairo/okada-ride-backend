@@ -9,8 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "tsc",
-    "lint": "eslint \"src/**/*.ts\" --fix",
+    "build": "echo 'No build step required for JavaScript'",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
