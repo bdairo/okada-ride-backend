@@ -2,17 +2,17 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
-import connectDB from './config/db.js';
-import { limiter, authLimiter } from './middleware/rateLimiter.js';
-import authRoutes from './routes/auth.js';
-import rideRoutes from './routes/rides.js';
-import messageRoutes from './routes/messages.js';
-import userRoutes from './routes/users.js';
-import facilityRoutes from './routes/facilities.js';
-import adminRoutes from './routes/admin.js';
-import pricingRoutes from './routes/pricing.js';
-import facilityPatientRoutes from './routes/facilityPatients.js';
-import paymentRoutes from './routes/payments.js';
+import connectDB from './src/config/db.js';
+import { limiter, authLimiter } from './src/middleware/rateLimiter.js';
+import authRoutes from './src/routes/auth.js';
+import rideRoutes from './src/routes/rides.js';
+import messageRoutes from './src/routes/messages.js';
+import userRoutes from './src/routes/users.js';
+import facilityRoutes from './src/routes/facilities.js';
+import adminRoutes from './src/routes/admin.js';
+import pricingRoutes from './src/routes/pricing.js';
+import facilityPatientRoutes from './src/routes/facilityPatients.js';
+import paymentRoutes from './src/routes/payments.js';
 import dotenv from 'dotenv';
 
 // Load environment variables
