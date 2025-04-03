@@ -34,6 +34,7 @@ const corsOptions = {
             'https://okada-ride-frontend.vercel.app'  // Production
         ];
         
+        console.log('Origin:', origin);
         // Reject requests without origin header
         if (!origin) {
             return callback(new Error('Origin header is required'), false);
